@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class News {
+import org.litepal.crud.DataSupport;
+
+public class News extends DataSupport{
 	private Introduction introduction;
     private List<Comment>  comList=new ArrayList<Comment>();
     private List<Category> categoryList = new ArrayList<Category>();  

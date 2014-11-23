@@ -2,7 +2,9 @@ package com.example.litepal_01;
 
 import java.util.Date;
 
-public class Comment {
+import org.litepal.crud.DataSupport;
+
+public class Comment extends DataSupport{
 
 	private int id;
 
