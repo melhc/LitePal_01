@@ -1,6 +1,7 @@
 package com.example.litepal_01;
 
 import java.util.Date;
+import java.util.List;
 
 import org.litepal.crud.DataSupport;
 import org.litepal.tablemanager.Connector;
@@ -70,6 +71,15 @@ public class MainActivity extends Activity {
 		DataSupport.deleteAll(News.class, "title = ? and commentcount = ?", "新闻", "0"); 
 //		DataSupport.deleteAll(News.class);  
 		//只有News对象的数据持久化了也就是save过了，才能删除
+		//query id 1 date
+//		News news = DataSupport.find(News.class, 1); 
+//		News firstNews = DataSupport.findFirst(News.class);
+//		News lastNews=DataSupport.findLast(News.class);
+		List<News> newsList = DataSupport.findAll(News.class, 1, 3, 5, 7);  
+		Log.i("TAG", "-------------->"+newsList.get(0).getTitle());
+		Log.i("TAG", "-------------->"+newsList.get(1).getTitle());
+		Log.i("TAG", "-------------->"+newsList.get(2).getTitle());
+		
 	}
 
 	@Override
