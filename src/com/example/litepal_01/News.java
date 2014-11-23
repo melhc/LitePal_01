@@ -1,10 +1,37 @@
 package com.example.litepal_01;
 
+import java.util.ArrayList;
 import java.util.Date;
-
-
+import java.util.List;
 
 public class News {
+	private Introduction introduction;
+    private List<Comment>  comList=new ArrayList<Comment>();
+    private List<Category> categoryList = new ArrayList<Category>();  
+    
+	public List<Category> getCategoryList() {
+		return categoryList;
+	}
+
+	public void setCategoryList(List<Category> categoryList) {
+		this.categoryList = categoryList;
+	}
+
+	public List<Comment> getComList() {
+		return comList;
+	}
+
+	public void setComList(List<Comment> comList) {
+		this.comList = comList;
+	}
+
+	public Introduction getIntroduction() {
+		return introduction;
+	}
+
+	public void setIntroduction(Introduction introduction) {
+		this.introduction = introduction;
+	}
 
 	private int id;
 
@@ -55,7 +82,5 @@ public class News {
 	public void setCommentCount(int commentCount) {
 		this.commentCount = commentCount;
 	}
-
-	
 
 }

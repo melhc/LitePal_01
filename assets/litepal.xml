@@ -1,10 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>  
-<litepal>  
-    <dbname value="demo" ></dbname>  
-  
-    <version value="2" ></version>  
-  
-    <list>  
-         <mapping class="com.example.litepal_01.News"></mapping> 
-    </list>  
-</litepal>  
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="demo" >
+    </dbname>
+
+    <version value="3" >
+    </version>
+
+    <list>
+
+        <mapping class="com.example.databasetest.model.News" >
+        </mapping>
+
+        <mapping class="com.example.databasetest.model.Comment" >
+        </mapping>
+
+        <mapping class="com.example.databasetest.model.Introduction" >
+        </mapping>
+
+        <mapping class="com.example.databasetest.model.Category" >
+        </mapping>
+    </list>
+
+</litepal>
