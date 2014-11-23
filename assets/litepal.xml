@@ -9,16 +9,16 @@
 
     <list>
 
-        <mapping class="com.example.databasetest.model.News" >
+        <mapping class="com.example.litepal_01.News" >
         </mapping>
 
-        <mapping class="com.example.databasetest.model.Comment" >
+        <mapping class="com.example.litepal_01.Comment" >
         </mapping>
 
-        <mapping class="com.example.databasetest.model.Introduction" >
+        <mapping class="com.example.litepal_01.Introduction" >
         </mapping>
 
-        <mapping class="com.example.databasetest.model.Category" >
+        <mapping class="com.example.litepal_01.Category" >
         </mapping>
     </list>
 
