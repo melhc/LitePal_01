@@ -2,10 +2,12 @@ package com.example.litepal_01;
 
 import java.util.Date;
 
+import org.litepal.crud.DataSupport;
 import org.litepal.tablemanager.Connector;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.Menu;
@@ -17,30 +19,51 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		SQLiteDatabase db = Connector.getDatabase();  
-		
-		News news=new News();
-		news.setTitle("ĞÂÎÅ");
-		news.setContent("ÁÖãü³É");
-		news.setPublishDate(new Date());
-		Log.i("TAG", "------------->"+news.getId());
-		news.save();
-		Log.i("TAG", "------------->"+news.getId());
-		Comment comment1 = new Comment();  
-		comment1.setContent("ºÃÆÀ£¡");  
-		comment1.setPublishDate(new Date());  
-		comment1.save();  
-		Comment comment2 = new Comment();  
-		comment2.setContent("ÔŞÒ»¸ö");  
-		comment2.setPublishDate(new Date());  
-		comment2.save();  
-		News news2 = new News();  
-		news2.getComList().add(comment1);  
-		news2.getComList().add(comment2);  
-		news2.setTitle("µÚ¶şÌõĞÂÎÅ±êÌâ");  
-		news2.setContent("µÚ¶şÌõĞÂÎÅÄÚÈİ");  
-		news2.setPublishDate(new Date());  
-		news2.setCommentCount(news2.getComList().size());  
-		news2.save();  
+//		ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½
+//		News news=new News();
+//		news.setTitle("ï¿½ï¿½ï¿½ï¿½");
+//		news.setContent("ï¿½ï¿½ï¿½ï¿½ï¿½");
+//		news.setPublishDate(new Date());
+//		Log.i("TAG", "------------->"+news.getId());
+//		news.save();
+//		Log.i("TAG", "------------->"+news.getId());
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		Comment comment1 = new Comment();  
+//		comment1.setContent("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");  
+//		comment1.setPublishDate(new Date());  
+//		comment1.save();  
+//		Comment comment2 = new Comment();  
+//		comment2.setContent("ï¿½ï¿½Ò»ï¿½ï¿½");  
+//		comment2.setPublishDate(new Date());  
+//		comment2.save();  
+//		News news2 = new News();  
+//		news2.getComList().add(comment1);  
+//		news2.getComList().add(comment2);  
+//		news2.setTitle("ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½");  
+//		news2.setContent("ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");  
+//		news2.setPublishDate(new Date());  
+//		news2.setCommentCount(news2.getComList().size());  
+//		news2.save();  
+		//Í¨ï¿½ï¿½contentVaulesï¿½Ş¸ï¿½ï¿½ï¿½ï¿½
+//		ContentValues values=new ContentValues();
+//		values.put("title", "ä»Šæ—¥Iphone6å‘å¸ƒ");
+//		DataSupport.update(News.class, values, 1);
+		//ä¿®æ”¹æ‰€æœ‰æ•°æ®
+//		ContentValues values = new ContentValues();  
+//		values.put("title", "ä»Šæ—¥iPhone6 Pluså‘å¸ƒ");  
+//		DataSupport.updateAll(News.class, values, "title = ?", "ä»Šæ—¥iPhone6å‘å¸ƒ");
+//		ContentValues values2 = new ContentValues();  
+//		values2.put("title", "ä»Šæ—¥iPhone6 Pluså‘å¸ƒ");  
+//		DataSupport.updateAll(News.class, values2, "title = ? and commentcount > ?", "ä»Šæ—¥iPhone6å‘å¸ƒ", "0");  
+//		News updateNews = new News();  
+//		updateNews.setTitle("ä»Šæ—¥iPhone6å‘å¸ƒ");  
+//		updateNews.update(2);  
+//		News updateNews2 = new News();  
+//		updateNews2.setTitle("ä»Šæ—¥iPhone6å‘å¸ƒ");  
+//		updateNews2.updateAll("title = ? and commentcount > ?", "ä»Šæ—¥iPhone6å‘å¸ƒ", "0");  
+		News updateNews = new News();  
+		updateNews.setToDefault("no comment");  
+		updateNews.updateAll(); 
 	}
 
 	@Override
