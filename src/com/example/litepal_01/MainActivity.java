@@ -61,9 +61,15 @@ public class MainActivity extends Activity {
 //		News updateNews2 = new News();  
 //		updateNews2.setTitle("今日iPhone6发布");  
 //		updateNews2.updateAll("title = ? and commentcount > ?", "今日iPhone6发布", "0");  
-		News updateNews = new News();  
-		updateNews.setToDefault("no comment");  
-		updateNews.updateAll(); 
+		// change default value
+/*		News updateNews = new News();  
+		updateNews.setToDefault("commentCount");  
+		updateNews.updateAll(); */
+		//删除数据
+//		DataSupport.delete(News.class, 3);  
+		DataSupport.deleteAll(News.class, "title = ? and commentcount = ?", "新闻", "0"); 
+//		DataSupport.deleteAll(News.class);  
+		//只有News对象的数据持久化了也就是save过了，才能删除
 	}
 
 	@Override
